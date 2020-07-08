@@ -8,12 +8,13 @@ export default class InputSearch extends Component {
     };
 
     onTermChange = (e) => {
-        const {onSearchChange = () => {}} = this.props;
+        const {onSearchChange = value => {}} = this.props;
         this.setState({
-            term: e.target.value
+            term:e.target.value
         });
 
         onSearchChange(e.target.value);
+
     };
 
 

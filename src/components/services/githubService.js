@@ -11,7 +11,8 @@ export default class GithubApiService {
         return await res.json();
     };
 
-    getRepositories = async (text) => {
-        return await this.getResource(`repositories?q=${text}`);
+    getRepositories = async (text,sort,language) => {
+        return await this.getResource(`repositories?q=${text}+${language}&order=${sort}&sort=stars&order=${sort}`);
+
     };
 }
