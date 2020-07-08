@@ -7,6 +7,7 @@ import RepositoriesList from "../RepositoriesList";
 
 
 
+
 export default class App extends Component {
 
 
@@ -38,8 +39,11 @@ export default class App extends Component {
                 <InputSearch onSearchChange={this.onSearchChange} />
                 <SelectSort onSortChange={this.onSortChange} />
                 <SelectLanguage onLanguageChange={this.onLanguageChange} />
-
+                <div className="ui divided three column grid  container">
+                    <div className="row">
                 <RepositoriesList  text={this.state.search} sort={this.state.sort} language={this.state.language} />
+                    </div>
+                </div>
             </div>
         )
 

@@ -97,9 +97,22 @@ export default class RepositoriesList extends Component {
 
         return (
             item.map((item) => {
-              const  { id, name, full_name, description, language} = item;
+              const  { id, name, full_name, description, language, owner} = item;
               return (
-                  <p key={id} > * {name}, <b> { full_name } </b>, <br />  Описание: <br /> {description} <br />  Язык: {language} <hr />  </p>
+
+                <div key={id} className="ui card mrg ">
+                    <div className="image"><img src={owner.avatar_url}/></div>
+                    <div className="content">
+                        <div className="header">{name} - { full_name }</div>
+                        <div className="description">{description}</div>
+                    </div>
+                    <div className="extra content">
+                        <a>
+                            <i aria-hidden="true" className="code icon"></i>
+                            {language}
+                        </a>
+                    </div>
+                </div>
 
 
 
